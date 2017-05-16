@@ -1,0 +1,10 @@
+angularjs-seed@ C:\wamp64\www\spa\angular-seed
++-- karma@0.10.10 
++-- UNMET PEER DEPENDENCY karma-chrome-launcher@2.0.0
++-- UNMET PEER DEPENDENCY karma-coffee-preprocessor@~0.1.0
++-- UNMET PEER DEPENDENCY karma-firefox-launcher@~0.1.0
++-- UNMET PEER DEPENDENCY karma-html2js-preprocessor@~0.1.0
++-- UNMET PEER DEPENDENCY karma-phantomjs-launcher@~0.1.0
++-- UNMET PEER DEPENDENCY karma-requirejs@~0.2.0
+`-- UNMET PEER DEPENDENCY karma-script-launcher@~0.1.0
+

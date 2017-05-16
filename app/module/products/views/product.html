@@ -1,0 +1,27 @@
+<div class="thumbnail clearfix">
+    <div class="prod-img col-xs-12 text-center">
+        <a href="javascript:void(0)" ng-click="moreInfo($index)">
+            <img ng-src="img/{{product.p_image}}" alt="product image">
+        </a>
+    </div>
+    <div class="col-xs-12 caption">
+        <h3 class="product-name" ng-click="moreInfo($index)">{{product.p_name}}</h3>
+        <p>{{product.p_description}}</p>
+        <div class="clearfix">
+            <!--<a href="" class="btn btn-primary" ng-click="addedToCart()">Add to Cart</a>
+						<a ui-sref="productsDetails" class="btn btn-default">More Info</a>-->
+            <h4 class="pull-left"><strong>{{product.p_originalprice | currency}}</strong></h4>
+            <div class="btn-group pull-right" role="group">
+                <a href="javascript:void(0)" ng-click="moveToWishlist($index)" class="btn btn-default">
+                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                </a>
+                <a href="javascript:void(0)" ng-click="addedToCart($index)" class="btn btn-default">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                </a>
+                <a href="javascript:void(0)" ng-click="moreInfo($index)" class="btn btn-default">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

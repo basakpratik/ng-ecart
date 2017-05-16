@@ -1,0 +1,270 @@
+<div class="container main">
+    <div class="row cart-body">
+        <form class="form-horizontal payment" method="post" action="" name="paymentForm" novalidate>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Subtotal</strong>
+                                <div class="pull-right">{{subtotal | currency:"₹":0}}</div>
+                            </div>
+                            <div class="col-xs-12">
+                                <small>Shipping</small>
+                                <div class="pull-right">{{shippingcost | currency:"₹":0}}</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <hr />
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Coupon Code</strong>
+                                <div class="pull-right"><input class="form-control coupon-entry" type="text" name="" value="" maxlength="9" ng-model="coupon"><button type="button" class="btn btn-default btn-sm" ng-click="couponCode()">Apply Code</button></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <hr />
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Order Total</strong>
+                                <div class="pull-right">
+                                    <strong ng-class="{'old-price':strikePrice}">{{ordertotal | currency:"₹":0}}</strong>
+                                    <strong ng-hide="discountedPrice">{{discountPrice | currency:"₹":0}}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--CREDIT CART PAYMENT-->
+                <div class="panel panel-info">
+                    <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
+                    <div class="payment-options">
+                        <ul>
+                            <li><label><input type="radio" name="payment" value="card" ng-model="paymentType"> Card Payment</label></li>
+                            <li><label><input type="radio" name="payment" value="cash" ng-model="paymentType"> COD</label></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body" ng-show="paymentType == 'card'">
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Credit/Debit Card Number:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control"
+                                name="creditCard"
+                                ng-model="ccinfo.number"
+                                required
+                                data-credit-card-type
+                                data-ng-pattern="/^[0-9]+$/"
+                                data-ng-minlength="15"
+                                maxlength="19"
+                                placeholder="Card Number" />
+                                <ul class="errorMessages" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">
+                                    <li ng-show="paymentForm.creditCard.$error.minlength">Credit card must be 15-19 digits</li>
+                                    <li ng-show="paymentForm.creditCard.$error.pattern">Credit card must consist of only numbers</li>
+                                    <li ng-show="paymentForm.creditCard.$error.invalid">Credit card must be a valid Amex, Visa, Discover, or Master Card</li>
+                                    <li ng-show="paymentForm.creditCard.$error.required">Credit card required</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Card Type (Auto Detect):</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="" value="" id="CreditCardType" name="CreditCardType" class="form-control" ng-model="ccinfo.type" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Card CVV/CCV:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control"
+                                name="securityCode"
+                                ng-model="ccinfo.securityCode"
+                                placeholder="CCV"
+                                required
+                                data-ng-pattern="/^[0-9]+$/"
+                                data-ng-minlength="3"
+                                maxlength="4">
+                                <ul class="errorMessages" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">
+                                    <li ng-show="paymentForm.securityCode.$error.pattern">Security code must contain only numbers</li>
+                                    <li ng-show="paymentForm.securityCode.$error.minlength">Security code must be 3-4 digits</li>
+                                    <li ng-show="paymentForm.securityCode.$error.required">Security code required</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <strong>Expiration Date</strong>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control" ng-model="ccinfo.month" name="month" data-card-expiration required>
+                                    <option disabled selected value="">Month</option>
+                                    <option ng-repeat="month in months" value="{{$index+1}}" > {{$index+1}} - {{month}}</li>
+                                </select>
+                                <ul class="errorMessages" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">
+                                    <li ng-show="paymentForm.month.$error.required">Expiration month required</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control" ng-model="ccinfo.year" name="year" required>
+                                    <option disabled selected value="">Year</option>
+                                    <option ng-repeat="year in [] | range:currentYear:currentYear+13">{{year}}</li>
+                                </select>
+                                <ul class="errorMessages" ng-show="paymentForm.submitAttempt && !paymentForm.$valid">
+                                    <li ng-show="paymentForm.year.$error.required">Expiration year required</li>
+                                    <li ng-show="paymentForm.month.$error.invalid">Provided expiration date is invalid</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-group">
+                            <div class="col-xs-12 text-right">
+                                <button type="submit" class="btn btn-primary btn-submit-fix" ng-click="paymentForm.submitAttempt=true;save(ccinfo);gotoInvoice()">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--CREDIT CART PAYMENT END-->
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+                <!--SHIPPING METHOD-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">Address</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <h4>Shipping Address</h4>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.country.$invalid }">
+                            <div class="col-md-12"><strong>Country:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="country" value="" ng-model="shipCountry" ng-required="true" />
+                                <p ng-show="paymentForm.country.$invalid" class="help-block">Country name is required.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.name.$invalid }">
+                            <div class="col-md-12"><strong>Full Name:</strong></div>
+                            <div class="col-xs-12">
+                                <input type="text" name="name" class="form-control" value="" ng-model="shipFullName" ng-required="true" />
+                                <p ng-show="paymentForm.name.$invalid" class="help-block">Your name is required.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.address.$invalid }">
+                            <div class="col-md-12"><strong>Address:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="address" class="form-control" value="" ng-model="shipAddress" ng-required="true" />
+                                <p ng-show="paymentForm.address.$invalid" class="help-block">Your address is required.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.city.$invalid }">
+                            <div class="col-md-12"><strong>City:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="city" class="form-control" value="" ng-model="shipCity" ng-required="true" />
+                                <p ng-show="paymentForm.city.$invalid" class="help-block">Your city is required.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.state.$invalid }">
+                            <div class="col-md-12"><strong>State:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="state" class="form-control" value="" ng-model="shipState" ng-required="true" />
+                                <p ng-show="paymentForm.state.$invalid" class="help-block">Your state is required.</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.zip_code.$invalid }">
+                            <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="zip_code" class="form-control" value="" ng-model="shipPostal" ng-required="true" ng-pattern="/^[0-9]+$/" ng-maxlength="7" />
+                                <p ng-show="paymentForm.zip_code.$invalid" class="help-block">Error in postal code field!!</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.phone_number.$invalid }">
+                            <div class="col-md-12"><strong>Phone Number:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="phone_number" class="form-control" value="" ng-model="shipPhone" ng-required="true" ng-maxlength="10" ng-pattern="/^[0-9]+$/" />
+                                <p ng-show="paymentForm.phone_number.$invalid" class="help-block">Error in phone number field!!</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : paymentForm.email_address.$invalid }">
+                            <div class="col-md-12"><strong>Email Address:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="email_address" class="form-control" value="" ng-model="shipEmail" ng-required="true" ng-pattern="/^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/" />
+                                <p ng-show="paymentForm.email_address.$invalid" class="help-block">Error in email field!!</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="checkbox" name="address" class="" value="" />
+                                Save address
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="checkbox" name="address" class="" value="" ng-model="billSameAsShip" ng-change="toggleBillAddressView()" />
+                                Billing Address same as Shipping Address
+                            </div>
+                        </div>
+                    </div>
+                    <!--SHIPPING METHOD END-->
+                    <!--BILLING METHOD START-->
+                    <div class="panel-body" ng-hide="billSameAsShip">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <h4>Billing Address</h4>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Country:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="country" value="" ng-model="billCountry" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-12">
+                                <strong>Full Name:</strong>
+                                <input type="text" name="first_name" class="form-control" value="" ng-model="billFullName" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Address:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="address" class="form-control" value="" ng-model="billAddress" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>City:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="city" class="form-control" value="" ng-model="billCity" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>State:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="state" class="form-control" value="" ng-model="billState" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
+                            <div class="col-md-12">
+                                <input type="text" name="zip_code" class="form-control" value="" ng-model="billPostal" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Phone Number:</strong></div>
+                            <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" ng-model="billPhone" /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Email Address:</strong></div>
+                            <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" ng-model="billEmail" /></div>
+                        </div>
+                    </div>
+                </div>
+                <!--BILLING METHOD END-->
+            </div>
+
+        </form>
+    </div>
+    <div class="row cart-footer">
+
+    </div>
+</div>

@@ -1,0 +1,452 @@
+{  
+   "productsInCart":[
+      {
+         "p_id":"1",
+         "p_catg_id": "Women's Clothing",
+         "p_name":"Silk Red Black White Saree",
+         "p_variation":"red black white pattern",
+         "p_style":"mb98at8306",
+         "p_selected_color":{
+            "name":"red",
+            "hexcode":""
+         },
+         "p_selected_size":{
+            "name":"small",
+            "code":"s"
+         },
+         "p_available_options":{
+            "colors":[
+               {  
+                  "name":"green",
+                  "hexcode":"A3D2A1"
+               },
+               {  
+                  "name":"yellow",
+                  "hexcode":"F9F8E6"
+               },
+               {  
+                  "name":"red",
+                  "hexcode":"ED99A8"
+               }
+            ],
+            "sizes":[
+               {  
+                  "name":"small",
+                  "code":"s"
+               },
+               {  
+                  "name":"medium",
+                  "code":"m"
+               },
+               {  
+                  "name":"large",
+                  "code":"l"
+               },
+               {  
+                  "name":"extra large",
+                  "code":"xl"
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":4599.0,
+         "p_price":4599.0,
+         "c_currency":"",
+         "p_image": "women-ethnic.jpg",
+         "p_thumbimage": "women-ethnic-thumb.jpg",
+         "p_description": "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text and a search will uncover many websites."
+      },
+      {  
+         "p_id":"2",
+         "p_catg_id": "Men's Clothing",
+         "p_name":"Navy Blue Blazer Mens Formal",
+         "p_variation":"blue grey",
+         "p_style":"mg56kt1946",
+         "p_selected_color":{  
+            "name":"blue",
+            "hexcode":""
+         },
+         "p_selected_size":{  
+            "name":"small",
+            "code":"s"
+         },
+         "p_available_options":{  
+            "colors":[  
+               {  
+                  "name":"green",
+                  "hexcode":"A3D2A1"
+               },
+               {  
+                  "name":"yellow",
+                  "hexcode":"F9F8E6"
+               },
+               {  
+                  "name":"pink",
+                  "hexcode":"F1DDEF"
+               }
+            ],
+            "sizes":[  
+               {  
+                  "name":"small",
+                  "code":"s"
+               },
+               {  
+                  "name":"medium",
+                  "code":"m"
+               },
+               {  
+                  "name":"large",
+                  "code":"l"
+               },
+               {  
+                  "name":"extra large",
+                  "code":"xl"
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":3599.0,
+         "p_price":3599.0,
+         "c_currency":"",
+         "p_image": "men-formal.jpg",
+         "p_thumbimage": "men-formal-thumb.jpg",
+         "p_description": "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop software."
+      },
+      {  
+         "p_id":"3",
+         "p_catg_id": "Men's Clothing",
+         "p_name":"Crimson Cotton Mens Kurta",
+         "p_variation":"crimson",
+         "p_style":"ms15jt1957",
+         "p_selected_color":{  
+            "name":"crimson",
+            "hexcode":""
+         },
+         "p_selected_size":{  
+            "name":"small",
+            "code":"s"
+         },
+         "p_available_options":{  
+            "colors":[  
+               {  
+                  "name":"green",
+                  "hexcode":"A3D2A1"
+               },
+               {  
+                  "name":"blue",
+                  "hexcode":"1169BD"
+               },
+               {  
+                  "name":"red",
+                  "hexcode":"ED99A8"
+               }
+            ],
+            "sizes":[  
+               {  
+                  "name":"small",
+                  "code":"s"
+               },
+               {  
+                  "name":"medium",
+                  "code":"m"
+               },
+               {  
+                  "name":"large",
+                  "code":"l"
+               },
+               {  
+                  "name":"extra large",
+                  "code":"xl"
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":575.0,
+         "p_price":575.0,
+         "c_currency":"",
+         "p_image": "men-ethnic.jpg",
+         "p_thumbimage": "men-ethnic-thumb.jpg",
+         "p_description": "Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum."
+      },
+      {  
+         "p_id":"4",
+         "p_catg_id": "Women's Clothing",
+         "p_name":"Floral Pattern Formal Shirt",
+         "p_variation":"womens polka dots",
+         "p_style":"ms56kt1876",
+         "p_selected_color":{  
+            "name":"white",
+            "hexcode":""
+         },
+         "p_selected_size":{  
+            "name":"small",
+            "code":"s"
+         },
+         "p_available_options":{  
+            "colors":[  
+               {  
+                  "name":"green",
+                  "hexcode":"A3D2A1"
+               },
+               {  
+                  "name":"yellow",
+                  "hexcode":"F9F8E6"
+               },
+               {  
+                  "name":"red",
+                  "hexcode":"ED99A8"
+               }
+            ],
+            "sizes":[  
+               {  
+                  "name":"small",
+                  "code":"s"
+               },
+               {  
+                  "name":"medium",
+                  "code":"m"
+               },
+               {  
+                  "name":"large",
+                  "code":"l"
+               },
+               {  
+                  "name":"extra large",
+                  "code":"xl"
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":699.0,
+         "p_price":699.0,
+         "c_currency":"",
+         "p_image": "women-formal.jpg",
+         "p_thumbimage": "women-formal-thumb.jpg",
+         "p_description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+      },
+      {
+         "p_id":"5",
+         "p_catg_id": "Electronics",
+         "p_name":"Syma X5SC Headless Quadcopter",
+         "p_variation":"jet black",
+         "p_style":"ms13kt1906",
+         "p_selected_color":{
+            "name":"",
+            "hexcode":""
+         },
+         "p_selected_size":{
+            "name":"",
+            "code":""
+         },
+         "p_available_options":{
+            "colors":[
+               {  
+                  "name":"",
+                  "hexcode":""
+               },
+               {  
+                  "name":"",
+                  "hexcode":""
+               },
+               {  
+                  "name":"",
+                  "hexcode":""
+               }
+            ],
+            "sizes":[
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":6244.0,
+         "p_price":6244.0,
+         "c_currency":"",
+         "p_image": "elec-drone.jpg",
+         "p_thumbimage": "elec-drone-thumb.jpg",
+         "p_description": "By using headless IOC, the forward direction has nothing to do with nose direction. This lessens the steepness of the learning curve."
+      },
+      {  
+         "p_id":"6",
+         "p_catg_id": "Electronics",
+         "p_name":"Sphero Star Sars BB-8 Robot",
+         "p_variation":"white yellow",
+         "p_style":"ms13kt1906",
+         "p_selected_color":{  
+            "name":"",
+            "hexcode":""
+         },
+         "p_selected_size":{  
+            "name":"small",
+            "code":"s"
+         },
+         "p_available_options":{  
+            "colors":[  
+               {  
+                  "name":"green",
+                  "hexcode":"A3D2A1"
+               },
+               {  
+                  "name":"yellow",
+                  "hexcode":"F9F8E6"
+               },
+               {  
+                  "name":"pink",
+                  "hexcode":"F1DDEF"
+               }
+            ],
+            "sizes":[  
+               {  
+                  "name":"small",
+                  "code":"s"
+               },
+               {  
+                  "name":"medium",
+                  "code":"m"
+               },
+               {  
+                  "name":"large",
+                  "code":"l"
+               },
+               {  
+                  "name":"extra large",
+                  "code":"xl"
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":15240.0,
+         "p_price":15240.0,
+         "c_currency":"",
+         "p_image": "elec-robot.jpg",
+         "p_thumbimage": "elec-robot-thumb.jpg",
+         "p_description": "Thanks to our advancements in technology, we have made it possible to bring a new part of star wars the force awaken into your home."
+      },
+      {  
+         "p_id":"7",
+         "p_catg_id": "Accessories",
+         "p_name":"TAGHeuer Man United Formula-01",
+         "p_variation":"blue",
+         "p_style":"tag23kt2017",
+         "p_selected_color":{  
+            "name":"",
+            "hexcode":""
+         },
+         "p_selected_size":{  
+            "name":"small",
+            "code":"s"
+         },
+         "p_available_options":{  
+            "colors":[  
+               {  
+                  "name":"",
+                  "hexcode":""
+               },
+               {  
+                  "name":"",
+                  "hexcode":""
+               },
+               {  
+                  "name":"",
+                  "hexcode":""
+               }
+            ],
+            "sizes":[  
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":383112.65,
+         "p_price":383112.65,
+         "c_currency":"",
+         "p_image": "acc-watch.png",
+         "p_thumbimage": "acc-watch-thumb.png",
+         "p_description": "Man United is on time with TAGHeuer! The two partners announce the launch of the specially created chronographs to seal their partnership."
+      },
+      {  
+         "p_id":"8",
+         "p_catg_id": "Accessories",
+         "p_name":"Jet Sennheiser HD 800S",
+         "p_variation":"jet black",
+         "p_style":"ms28kt2017",
+         "p_selected_color":{  
+            "name":"",
+            "hexcode":""
+         },
+         "p_selected_size":{  
+            "name":"",
+            "code":""
+         },
+         "p_available_options":{  
+            "colors":[  
+               {  
+                  "name":"",
+                  "hexcode":""
+               },
+               {  
+                  "name":"",
+                  "hexcode":""
+               },
+               {  
+                  "name":"",
+                  "hexcode":""
+               }
+            ],
+            "sizes":[  
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               },
+               {  
+                  "name":"",
+                  "code":""
+               }
+            ]
+         },
+         "p_quantity":1,
+         "p_originalprice":120000.0,
+         "p_price":120000.0,
+         "c_currency":"",
+         "p_image": "acc-headphone.jpg",
+         "p_thumbimage": "acc-headphone-thumb.jpg",
+         "p_description": "The HD 800 S are probably the world’s ﬁrst headphones ever to truly make you forget you are wearing any. It lives up to its promise with every detail."
+      }
+   ]
+}

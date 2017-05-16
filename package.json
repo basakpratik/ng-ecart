@@ -1,0 +1,13 @@
+{
+  "name": "angularjs-seed",
+  "description": "A starter project for AngularJS",
+  "repository": "https://github.com/angular/angular-seed",
+  "devDependencies": {
+    "karma": "^0.10.10",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^0.1.6",
+    "karma-junit-reporter": "~0.1",
+    "phantomjs": "~1.9",
+    "protractor": "~0.17.0"
+  }
+}

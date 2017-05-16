@@ -1,0 +1,50 @@
+<!-- Page Content -->
+<div class="container main">
+	<div style="height: 305px">
+		<carousel interval="myInterval">
+			<slide ng-repeat="slide in slides" active="slide.active">
+				<img ng-src="{{slide.image}}" style="margin:auto; width: 100%; max-width: 100%;">
+				<div class="carousel-caption">
+					<h4>Slide {{$index}}</h4>
+					<p>{{slide.text}}</p>
+				</div>
+			</slide>
+		</carousel>
+	</div>
+	<!-- Jumbotron Header -->
+	<header class="jumbotron hero-spacer text-center">
+		<h2>A Warm Welcome!</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+	</header>
+
+	<hr>
+
+	<!-- Page Features -->
+	<div class="row text-center">
+
+		<div class="col-md-3 col-sm-6 hero-feature" ng-repeat="productCatg in categoryArr">
+			<div class="thumbnail clearfix">
+				<div class="prod-img col-xs-12 text-center">
+					<a href="javascript:void(0)" ng-click="viewProductList($index)">
+						<img ng-src="img/products/{{productCatg.p_catg_img}}" alt="product image">
+					</a>
+				</div>
+				<div class="col-xs-12 caption">
+					<h3 class="product-name" ng-click="viewProductList($index)">{{productCatg.p_catg_id}}</h3>
+					<!--<p>{{productCatg.p_description}}</p>-->
+					<!--<div class="clearfix">
+						<div class="btn-group text-center" role="group">
+							<a href="javascript:void(0)" ng-click="viewProductList()" class="btn btn-default">
+								<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- /.row -->
+
+</div>
+<!-- /.container -->
