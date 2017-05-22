@@ -8,15 +8,15 @@ angular.module('cartApp.category.services', []).
 		var oCategory = {};
 		oCategory.fProductArr = [];
 		oCategory.setFilteredProducts = function(fProduct){
-			fProductArr.push(fProduct);
+			oCategory.fProductArr.push(fProduct);
 		}
 
 		oCategory.getFilteredProducts = function(){
-			return fProductArr;
+			return oCategory.fProductArr;
 		}
 
 		oCategory.resetFilteredProducts = function () {
-			fProductArr = [];
+			oCategory.fProductArr = [];
 		}
 
 		return oCategory;
