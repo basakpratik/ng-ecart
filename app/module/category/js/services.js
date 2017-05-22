@@ -5,22 +5,19 @@
 angular.module('cartApp.category.services', []).
 	factory('category',
 	[function () {
-		var fProductArr = [];
-		function setFilteredProducts(fProduct){
-			fProductArr.push(fProduct);
+		var oCategory = {};
+		oCategory.fProductArr = [];
+		oCategory.setFilteredProducts = function(fProduct){
+			oCategory.fProductArr.push(fProduct);
 		}
 
-		function getFilteredProducts(){
-			return fProductArr;
+		oCategory.getFilteredProducts = function(){
+			return oCategory.fProductArr;
 		}
 
-		var resetFilteredProducts = function () {
-			fProductArr = [];
+		oCategory.resetFilteredProducts = function () {
+			oCategory.fProductArr = [];
 		}
 
-		return {
-			setFilteredProducts: setFilteredProducts,
-			getFilteredProducts: getFilteredProducts,
-			resetFilteredProducts: resetFilteredProducts
-		}
+		return oCategory;
 	}]);
