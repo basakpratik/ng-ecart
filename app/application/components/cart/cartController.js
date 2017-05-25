@@ -8,8 +8,8 @@ angular.module('cartApp.cart.controllers', []).
 		function ($scope, $state, $log, $rootScope, servQuantity, duplicateCheck, priceCalculation) {
 
 			$log.log('inside cart controller');
-			$scope.servQuantity = servQuantity;
-			$scope.duplicateCheck = duplicateCheck;
+			/*$scope.servQuantity = servQuantity;
+			$scope.duplicateCheck = duplicateCheck;*/
 			$rootScope.grandTotal = 0;
 			$rootScope.arrGrandTotal = [];
 			//$scope.discountedPrice = true;
@@ -27,7 +27,7 @@ angular.module('cartApp.cart.controllers', []).
 				$scope.expression = false;
 				for (var i = 0; i < $rootScope.cart.length; i++) {
 					$rootScope.cart[i].p_price = $rootScope.cart[i].p_quantity * $rootScope.cart[i].p_originalprice;
-					//console.log('$rootScope.products[i].p_price: '+$rootScope.cart[i].p_price);
+					//console.log('$rootScope.cart[i].p_price: '+$rootScope.cart[i].p_price);
 					$rootScope.arrGrandTotal.push($rootScope.cart[i].p_price);
 					//console.log('$rootScope.arrGrandTotal: '+JSON.stringify($rootScope.arrGrandTotal));
 					$rootScope.grandTotal += $rootScope.arrGrandTotal[i];

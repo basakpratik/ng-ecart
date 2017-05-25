@@ -8,59 +8,52 @@ angular.module('cartApp.product.controllers', []).
 		function ($scope, $log, $http, $state, $rootScope, servQuantity, duplicateCheck, category) {
 			$log.log('inside product controller');
 			servQuantity.resetProduct();
-			/*$http.get('data/cart.json').
-				success(function (data) {
-					$rootScope.products = data.productsInCart;
-					console.log('$rootScope.products: '+JSON.stringify($rootScope.products));
-				}).
-				error(function () {
-					$log.log('could not find cart.json');
-				});*/
-			//$rootScope.products = $rootScope.filteredProducts;
-			$rootScope.products = category.getFilteredProducts();
-			//console.log('$rootScope.products: '+JSON.stringify($rootScope.products));
+			$scope.products = category.getFilteredProducts();
+			$log.log('$scope.products: '+JSON.stringify(category.getFilteredProducts()));
 			$scope.moreInfo = function ($index) {
 				$rootScope.currIndex = $index;
-				console.log('products[$index]: '+JSON.stringify($rootScope.products[$index]));
-				servQuantity.addProduct($rootScope.products[$index]);
+				//console.log('products[$index]: '+JSON.stringify($scope.products[$index]));
+				servQuantity.addProduct($scope.products[$index]);
 				servQuantity.prodQuantity = 1;
 				$state.go('productsDetails');
 			}
 			$scope.moveToWishlist = function($index){
 				$log.log('moved to wishlist');
 				$log.log('wishlist b4: ' + JSON.stringify($rootScope.wishlist));
-				if (duplicateCheck.checkDuplicateInObject($rootScope.products[$index], $rootScope.wishlist, 'p_id', false)) {
+				if (duplicateCheck.checkDuplicateInObject($scope.products[$index], $rootScope.wishlist, 'p_id', false)) {
 					$scope.wishToCart = true;
 					$scope.duplicateData = 'This product is already added in your wishlist!!';
 				} else {
-					$rootScope.wishlist.push($rootScope.products[$index]);
+					$rootScope.wishlist.push($scope.products[$index]);
 					$scope.wishToCart = true;
 					$scope.duplicateData = 'This product is added in your wishlist!!';
 					$rootScope.addedWishCount++;
-					$log.log('wishlist after: ' + JSON.stringify($rootScope.wishlist));
+					//$log.log('wishlist after: ' + JSON.stringify($rootScope.wishlist));
 				}
 			}
 			$scope.addedToCart = function ($index) {
 				//$log.log('cart b4: ' + JSON.stringify($rootScope.cart));
-				if(duplicateCheck.checkDuplicateInObject($rootScope.products[$index], $rootScope.cart, 'p_id', false)){
+				if(duplicateCheck.checkDuplicateInObject($scope.products[$index], $rootScope.cart, 'p_id', false)){
 					$scope.wishToCart = true;
 					$scope.duplicateData = 'This product is already added in your cart!!';
 				} else {
-					$rootScope.cart.push($rootScope.products[$index]);
+					$rootScope.cart.push($scope.products[$index]);
 					$scope.wishToCart = true;
 					$scope.duplicateData = 'This product is added in your cart!!';
 					$rootScope.addedProdCount++;
 					//$log.log('cart after: ' + JSON.stringify($rootScope.cart));
-					$rootScope.products[$index].p_quantity = 1;
+					$scope.products[$index].p_quantity = 1;
 				}
 			}
 			$scope.sort = false;
 		}
 	]).controller('ProductDetailsController',
-	['$scope', '$log', '$stateParams', '$rootScope', '$state', 'servQuantity', 'duplicateCheck',
-		function ($scope, $log, $stateParams, $rootScope, $state, servQuantity, duplicateCheck) {
+	['$scope', '$log', '$stateParams', '$rootScope', '$state', 'servQuantity', 'duplicateCheck', 'category',
+		function ($scope, $log, $stateParams, $rootScope, $state, servQuantity, duplicateCheck, category) {
 
 			$log.log('inside product details controller');
+			$scope.products = category.getFilteredProducts();
+			//$log.log('$scope.products: '+JSON.stringify(category.getFilteredProducts()[$rootScope.currIndex]));
 			$scope.servQuantity = servQuantity;
 			$scope.duplicateCheck = duplicateCheck;
 			$scope.addToWishlistTxt = 'Add to Wishlist';
@@ -79,11 +72,11 @@ angular.module('cartApp.product.controllers', []).
 					$scope.statusMessage = 'This product is added in your cart!!';
 					$rootScope.addedProdCount++;
 
-					$rootScope.products[$rootScope.currIndex].p_quantity = servQuantity.prodQuantity;
-					$rootScope.products[$rootScope.currIndex].p_price = $rootScope.products[$rootScope.currIndex].p_quantity * $rootScope.products[$rootScope.currIndex].p_originalprice;
+					$scope.products[$rootScope.currIndex].p_quantity = servQuantity.prodQuantity;
+					$scope.products[$rootScope.currIndex].p_price = $scope.products[$rootScope.currIndex].p_quantity * $scope.products[$rootScope.currIndex].p_originalprice;
 
-					$rootScope.products[$rootScope.currIndex].p_price = $rootScope.products[$rootScope.currIndex].p_quantity * $rootScope.products[$rootScope.currIndex].p_originalprice;
-					$rootScope.arrGrandTotal.push($rootScope.products[$rootScope.currIndex].p_price);
+					$scope.products[$rootScope.currIndex].p_price = $scope.products[$rootScope.currIndex].p_quantity * $scope.products[$rootScope.currIndex].p_originalprice;
+					$rootScope.arrGrandTotal.push($scope.products[$rootScope.currIndex].p_price);
 
 					for (var i = 0; i < $rootScope.cart.length; i++) {
 						$rootScope.grandTotal += $rootScope.arrGrandTotal[i];
