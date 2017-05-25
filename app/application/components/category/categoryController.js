@@ -4,13 +4,15 @@
 
 angular.module('cartApp.category.controllers', []).
 	controller('CategoryController',
-	['$scope', '$http', '$state', '$rootScope', 'servQuantity', 'category',
-		function ($scope, $http, $state, $rootScope, servQuantity, category) {			
+	['$scope', '$http', '$state', '$rootScope', '$log', 'servQuantity', 'category',
+		function ($scope, $http, $state, $rootScope, $log, servQuantity, category) {			
 			console.log('inside category controller');
-			$scope.categoryArr = [], $rootScope.filteredProducts = [];
+			$scope.dataItems = [];
+			$scope.categoryArr = [];
 			servQuantity.resetProduct();
 			category.resetFilteredProducts();
-			$http.get('data/cart.json').
+
+			/*$http.get('data/cart.json').
 				success(function (data) {
 					$scope.productCatgId = data.productsInCart;
 					for(var i=0; i<$scope.productCatgId.length; i++){
@@ -35,20 +37,35 @@ angular.module('cartApp.category.controllers', []).
 				}).
 				error(function () {
 					console.log('could not find cart.json');
-				});
+				});*/
+
+			$scope.getItems = function(){
+				category.getData().then(function(dataParam){
+					$scope.dataItems = dataParam.productsInCart;
+					dataholdFunc($scope.dataItems);
+				}, function(){
+					$log.error('Error fetching data from service!');
+				})
+			}
+			$scope.getItems();
+
+			function dataholdFunc(proData){
+				category.setDataFilter(proData);
+				$scope.categoryArr = category.getDataFilter(); //-> category wise filtered data
+				//$log.log('$scope.categoryArr->'+JSON.stringify($scope.categoryArr));
+			}
 			
 			$scope.viewProductList = function($index){
-				//console.log('$index->'+$scope.categoryArr[$index]);
-				//console.log('p_catg_id: '+JSON.stringify($rootScope.productCatgId.length));
-				for(var i=0; i<$scope.productCatgId.length; i++){
-					if($scope.categoryArr[$index].p_catg_id == $scope.productCatgId[i].p_catg_id){
-						//console.log('=>'+JSON.stringify($scope.productCatgId[i]));
-						//$rootScope.filteredProducts.push($scope.productCatgId[i]);
-						category.setFilteredProducts($scope.productCatgId[i]);
+				category.getData().then(function(dataParam){
+					$scope.dataItems = dataParam.productsInCart;
+					for(var i=0; i<$scope.dataItems.length; i++){
+						if($scope.categoryArr[$index].p_catg_id == $scope.dataItems[i].p_catg_id){
+							category.setFilteredProducts($scope.dataItems[i]);
+						}
 					}
-					//console.log('i['+i+']->'+JSON.stringify($rootScope.productCatgId[i]));
-				}
-				//console.log('$rootScope.filteredProducts: '+JSON.stringify($rootScope.filteredProducts));
+				}, function(){
+					$log.error('Error fetching data from service!');
+				});
 				$state.go('products');
 			}
 
