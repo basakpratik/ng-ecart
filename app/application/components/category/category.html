@@ -1,16 +1,16 @@
 <!-- Page Content -->
+<div class="banner">
+	<carousel interval="myInterval">
+		<slide ng-repeat="slide in slides" active="slide.active">
+			<img ng-src="{{slide.image}}" style="margin:auto; width: 100%; max-width: 100%;">
+			<div class="carousel-caption">
+				<h4>Slide {{$index}}</h4>
+				<p>{{slide.text}}</p>
+			</div>
+		</slide>
+	</carousel>
+</div>
 <div class="container main">
-	<div style="height: 305px">
-		<carousel interval="myInterval">
-			<slide ng-repeat="slide in slides" active="slide.active">
-				<img ng-src="{{slide.image}}" style="margin:auto; width: 100%; max-width: 100%;">
-				<div class="carousel-caption">
-					<h4>Slide {{$index}}</h4>
-					<p>{{slide.text}}</p>
-				</div>
-			</slide>
-		</carousel>
-	</div>
 	<!-- Jumbotron Header -->
 	<header class="jumbotron hero-spacer text-center">
 		<h2>A Warm Welcome!</h2>
