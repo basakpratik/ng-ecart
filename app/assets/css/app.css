@@ -80,7 +80,7 @@ footer {
 }
 
 .main {
-	padding: 75px 0;
+	padding: 25px 0 75px;
 }
 
 .navbar-head {
@@ -99,6 +99,7 @@ footer {
 
 .footer p {
 	margin: 0;
+	line-height: 2.5;
 }
 
 .prod-img {
@@ -353,4 +354,16 @@ input.ng-invalid.ng-dirty {
 	display: inline-block;
 	line-height: 2.41;
 	margin-right: 5px;
+}
+
+.banner{
+	margin-top: 54px;
+}
+
+.nopadding{
+	padding: 0;
+}
+
+.btn-subsribe{
+	width: 100%;
 }

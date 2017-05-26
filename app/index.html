@@ -36,6 +36,9 @@
 	<script src="application/shared/header/headerDirective.js"></script>
 	<script src="application/shared/header/headerService.js"></script>
 
+	<script src="application/shared/footer/footerModule.js"></script>
+	<script src="application/shared/footer/footerDirective.js"></script>
+
 	<script src="application/components/cart/cartModule.js"></script>
 	<script src="application/components/cart/cartController.js"></script>
 	<script src="application/components/cart/cartService.js"></script>
@@ -70,8 +73,8 @@
 <body>
 	<!--<div ng-include="'module/components/header.html'"></div>-->
 	<nav-header></nav-header>
-	<div ui-view class="main-content">Loading . . .</div>
-	<div ng-include="'application/shared/footer/footer.html'"></div>
+	<main ui-view class="main-content">Loading . . .</main>
+	<site-footer></site-footer>
 </body>
 
 </html>

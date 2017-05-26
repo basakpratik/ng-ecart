@@ -10,6 +10,7 @@ angular.module('cartApp', [
     'cartApp.category',
     'cartApp.product',
     'cartApp.header',
+    'cartApp.footer',
     'cartApp.cart',
     'cartApp.wishlist',
     'cartApp.login',
@@ -87,7 +88,7 @@ angular.module('cartApp').config([
 
         $rootScope.addedProdCount = 0;
         $rootScope.addedWishCount = 0;
-        $rootScope.arrHoldProduct = [];
+        //$rootScope.arrHoldProduct = [];
         $rootScope.arrGrandTotal = [];
         $rootScope.cart = [];
         $rootScope.wishlist = [];
