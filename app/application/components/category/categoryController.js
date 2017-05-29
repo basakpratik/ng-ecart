@@ -57,7 +57,7 @@ angular.module('cartApp.category.controllers', []).
 			
 			$scope.viewProductList = function($index){
 				var currCatgId = $scope.categoryArr[$index].p_catg_id;
-				/*category.getData().then(function(dataParam){
+				category.getData().then(function(dataParam){
 					$scope.dataItems = dataParam.productsInCart;
 					for(var i=0; i<$scope.dataItems.length; i++){
 						if($scope.categoryArr[$index].p_catg_id == $scope.dataItems[i].p_catg_id){
@@ -66,7 +66,7 @@ angular.module('cartApp.category.controllers', []).
 					}
 				}, function(){
 					$log.error('Error fetching data from service!');
-				});*/
+				});
 				$state.go('products', {
 					catgId: currCatgId
 				});

@@ -10,7 +10,7 @@ angular.module('cartApp.product.controllers', []).
 			servQuantity.resetProduct();
 
 			var currCatgId = $stateParams.catgId;
-			category.onlyCatg(currCatgId);
+			//category.onlyCatg(currCatgId);
 			$scope.products = category.getFilteredProducts();
 			//$log.log('$scope.products: '+JSON.stringify(category.getFilteredProducts()));
 
