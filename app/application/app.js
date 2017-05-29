@@ -30,12 +30,12 @@ angular.module('cartApp').config([
             templateUrl: 'application/components/category/category.html'
         });
         $stateProvider.state('products', {
-            url: '/products',
+            url: '/category/:catgId',
             controller: 'ProductsController',
             templateUrl: 'application/components/products/products.html'
         });
         $stateProvider.state('productsDetails', {
-            url: '/details/:product',
+            url: '/details',
             controller: 'ProductDetailsController',
             templateUrl: 'application/components/products/details.html'
         });

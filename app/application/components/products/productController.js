@@ -4,12 +4,21 @@
 
 angular.module('cartApp.product.controllers', []).
 	controller('ProductsController',
-	['$scope', '$log', '$http', '$state', '$rootScope', 'servQuantity', 'duplicateCheck', 'category',
-		function ($scope, $log, $http, $state, $rootScope, servQuantity, duplicateCheck, category) {
+	['$scope', '$log', '$http', '$state', '$rootScope', '$stateParams', 'servQuantity', 'duplicateCheck', 'category',
+		function ($scope, $log, $http, $state, $rootScope, $stateParams, servQuantity, duplicateCheck, category) {
 			$log.log('inside product controller');
 			servQuantity.resetProduct();
+
+			var currCatgId = $stateParams.catgId;
+			category.onlyCatg(currCatgId);
 			$scope.products = category.getFilteredProducts();
-			$log.log('$scope.products: '+JSON.stringify(category.getFilteredProducts()));
+			//$log.log('$scope.products: '+JSON.stringify(category.getFilteredProducts()));
+
+
+
+
+
+
 			$scope.moreInfo = function ($index) {
 				$rootScope.currIndex = $index;
 				//console.log('products[$index]: '+JSON.stringify($scope.products[$index]));
