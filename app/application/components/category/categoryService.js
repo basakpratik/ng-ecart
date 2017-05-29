@@ -11,10 +11,10 @@ angular.module('cartApp.category.services', []).
 			getData: getData,
 			setDataFilter: setDataFilter,
 			getDataFilter: getDataFilter,
-			//setFilteredProducts: setFilteredProducts,
+			setFilteredProducts: setFilteredProducts,
 			getFilteredProducts: getFilteredProducts,
-			resetFilteredProducts: resetFilteredProducts,
-			onlyCatg: onlyCatg
+			resetFilteredProducts: resetFilteredProducts
+			//onlyCatg: onlyCatg
 		};
 
 		function getData(){
@@ -51,7 +51,7 @@ angular.module('cartApp.category.services', []).
 			}
 		}
 
-		function onlyCatg(catParam){
+		/*function onlyCatg(catParam){
 			for(var i=0; i<serviceObject.data.productsInCart.length; i++){
 				if(catParam == serviceObject.data.productsInCart[i].p_catg_id){
 					//serviceObject.setFilteredProducts(serviceObject.data.productsInCart[i]);
@@ -59,15 +59,15 @@ angular.module('cartApp.category.services', []).
 					console.log(serviceObject.fProductArr);
 				}
 			}
-		}
+		}*/
 
 		function getDataFilter(){
 			return serviceObject.catgData;
 		}
 
-		/*function setFilteredProducts(fProduct){
+		function setFilteredProducts(fProduct){
 			serviceObject.fProductArr.push(fProduct);
-		}*/
+		}
 
 		function getFilteredProducts(){
 			return serviceObject.fProductArr;
