@@ -2,7 +2,8 @@
    "productsInCart":[
       {
          "p_id":"1",
-         "p_catg_id": "Women's Clothing",
+         "p_catg_id": "cwc",
+         "p_catg_name": "Women's Clothing",
          "p_name":"Silk Red Black White Saree",
          "p_variation":"red black white pattern",
          "p_style":"mb98at8306",
@@ -58,7 +59,8 @@
       },
       {  
          "p_id":"2",
-         "p_catg_id": "Men's Clothing",
+         "p_catg_id": "cmc",
+         "p_catg_name": "Men's Clothing",
          "p_name":"Navy Blue Blazer Mens Formal",
          "p_variation":"blue grey",
          "p_style":"mg56kt1946",
@@ -114,7 +116,8 @@
       },
       {  
          "p_id":"3",
-         "p_catg_id": "Men's Clothing",
+         "p_catg_id": "cmc",
+         "p_catg_name": "Men's Clothing",
          "p_name":"Crimson Cotton Mens Kurta",
          "p_variation":"crimson",
          "p_style":"ms15jt1957",
@@ -170,7 +173,8 @@
       },
       {  
          "p_id":"4",
-         "p_catg_id": "Women's Clothing",
+         "p_catg_id": "cwc",
+         "p_catg_name": "Women's Clothing",
          "p_name":"Floral Pattern Formal Shirt",
          "p_variation":"womens polka dots",
          "p_style":"ms56kt1876",
@@ -226,7 +230,8 @@
       },
       {
          "p_id":"5",
-         "p_catg_id": "Electronics",
+         "p_catg_id": "cel",
+         "p_catg_name": "Electronics",
          "p_name":"Syma X5SC Headless Quadcopter",
          "p_variation":"jet black",
          "p_style":"ms13kt1906",
@@ -282,7 +287,8 @@
       },
       {  
          "p_id":"6",
-         "p_catg_id": "Electronics",
+         "p_catg_id": "cel",
+         "p_catg_name": "Electronics",
          "p_name":"Sphero Star Sars BB-8 Robot",
          "p_variation":"white yellow",
          "p_style":"ms13kt1906",
@@ -338,7 +344,8 @@
       },
       {  
          "p_id":"7",
-         "p_catg_id": "Accessories",
+         "p_catg_id": "cac",
+         "p_catg_name": "Accessories",
          "p_name":"TAGHeuer Man United Formula-01",
          "p_variation":"blue",
          "p_style":"tag23kt2017",
@@ -394,7 +401,8 @@
       },
       {  
          "p_id":"8",
-         "p_catg_id": "Accessories",
+         "p_catg_id": "cac",
+         "p_catg_name": "Accessories",
          "p_name":"Jet Sennheiser HD 800S",
          "p_variation":"jet black",
          "p_style":"ms28kt2017",
